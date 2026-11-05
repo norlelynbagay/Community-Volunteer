@@ -1,0 +1,111 @@
+ion-toolbar {
+    --background: transparent;
+    --border-width: 0;
+}
+
+ion-toolbar ion-button {
+    --color: #3b3bd6;
+    --background: #eef0ff;
+    --border-radius: 50%;
+    --padding-start: 8px;
+    --padding-end: 8px;
+}
+
+ion-content {
+    --background: #f5f6fb;
+}
+
+ion-list {
+    padding: 10px 20px 30px;
+    background-color: transparent;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    color: #1f1f3d;
+    margin: 6px 0 22px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 10px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #4b4bff, #8a8aff);
+}
+
+/* each section = one card */
+ul {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 18px 18px 14px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(40, 40, 110, 0.08);
+    border-left: 5px solid #4b4bff;
+}
+
+/* section title */
+ul > li:first-child {
+    font-size: 1.1rem;
+    color: #3b3bd6;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+p {
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0 0 8px;
+}
+
+/* FAQ question */
+p.q {
+    font-weight: bold;
+    color: #1f1f3d;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+ol {
+    margin: 4px 0 0;
+    padding-left: 22px;
+}
+
+ol.bullets {
+    list-style: disc;
+}
+
+ol li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    padding: 4px 0;
+}
+
+ol li::marker {
+    color: #4b4bff;
+    font-weight: bold;
+}
+
+p a {
+    color: #4b4bff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    ion-content { --background: #121222; }
+    ul { background: #1d1d35; box-shadow: none; }
+    h1, p.q { color: #ffffff; }
+    p, ol li { color: #d0d0e0; }
+    ul > li:first-child, p a { color: #9d9dff; }
+}

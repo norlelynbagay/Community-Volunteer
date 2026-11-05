@@ -14,7 +14,9 @@ export const routes: Routes = [
       { path: 'home', loadComponent: () => import('./pages/volunteer/home.page').then(m => m.HomePage) },
       { path: 'events', loadComponent: () => import('./pages/volunteer/events.page').then(m => m.EventsPage) },
       { path: 'activity', loadComponent: () => import('./pages/volunteer/activity.page').then(m => m.ActivityPage) },
-      { path: 'profile', loadComponent: () => import('./pages/volunteer/profile.page').then(m => m.ProfilePage) }
+      { path: 'profile', loadComponent: () => import('./pages/volunteer/profile.page').then(m => m.ProfilePage) },
+      { path: 'about', loadComponent: () => import('./pages/volunteer/about/about.page').then(m => m.AboutPage) },
+      { path: 'help-support', loadComponent: () => import('./pages/volunteer/help-support/help-support.page').then(m => m.HelpSupportPage) }
     ]
   },
   { path: 'event/:id', canActivate: [authGuard], loadComponent: () => import('./pages/volunteer/event-detail.page').then(m => m.EventDetailPage) },

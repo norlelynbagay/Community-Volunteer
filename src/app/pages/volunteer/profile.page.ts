@@ -47,8 +47,12 @@ export class ProfilePage {
     try { await this.auth.updateProfile({ full_name: this.form.full_name.trim(), location: this.form.location?.trim() || null }); this.editing = false; this.ui.toast('Profile updated.'); }
     catch (e) { this.ui.error(e); }
   }
-  async about() { const s = await this.data.settings().catch(() => null); this.ui.info('About Us', `${s?.org_name || 'Community Volunteer'} connects neighbors with volunteer opportunities so we can make a difference together.`); }
-  async help() { const s = await this.data.settings().catch(() => null); this.ui.info('Help & Support', `Need help? Email us at ${s?.contact_email || 'info@communityvolunteer.org'}.`); }
+  about() {
+    this.router.navigateByUrl('/app/about');
+  }
+  async help() { 
+    this.router.navigateByUrl('/app/help-support');
+  }
   async logout() {
     if (!(await this.ui.confirm('Log out', 'Are you sure you want to log out?', 'Log out'))) return;
     await this.auth.signOut(); this.router.navigateByUrl('/login', { replaceUrl: true });
